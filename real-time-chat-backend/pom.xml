@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>real-time-chat-backend</artifactId>
-
+    <packaging>pom</packaging>
 
     <modules>
         <module>real-time-chat-database</module>
