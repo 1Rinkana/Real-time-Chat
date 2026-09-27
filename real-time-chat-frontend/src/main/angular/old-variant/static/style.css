@@ -1,0 +1,209 @@
+html {
+    height: 100%;
+}
+
+* {
+    --primary-color: #2A324B;
+    --secondary-color: #F7C59F;
+    --bg-color: #E1E5EE;
+    --card-color: #C7CCDB;
+    --card-border-color: #767B91;
+
+    --default-spacing: 0.5rem;
+
+    --default-border-radius: 0.25rem;
+
+    --default-border-size: 0.065rem;
+
+    border: none;
+
+    font-size: large;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+}
+
+.messages-screen {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    background-color: var(--card-color);
+    border-right:  var(--default-border-size) solid var(--card-border-color);
+}
+
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+
+    .chat-name {
+        width: 100%;
+        font-size: larger;
+        background-color: var(--card-color);
+        border-bottom: var(--default-border-size) solid var(--card-border-color);
+        text-align: center;
+    }
+}
+
+.users-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    background-color: var(--card-color);
+    overflow-y: auto;
+
+    .user-container {
+        display: flex;
+        flex-direction: row;
+        padding: var(--default-spacing);
+        justify-content: space-between;
+
+        .user {
+            font-size: medium;
+            align-self: start;
+        }
+
+        .new-message-counter {
+            font-size: small;
+            align-self: end;
+        }
+    }
+}
+
+.chat-btn {
+    display: flex;
+    width: auto;
+    min-width: fit-content;
+    padding: var(--default-spacing);
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    border-radius: 0;
+    border-top: var(--default-border-size) solid var(--card-border-color);
+    grid-gap: var(--default-spacing);
+}
+
+.selected, &:hover {
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+}
+
+.public {
+    margin-top: auto;
+}
+
+.messages-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: var(--default-spacing);
+    gap: var(--default-spacing);
+
+    .message-container {
+        display: grid;
+        width: fit-content;
+        grid-template:
+                "sender date"
+                "text text";
+        padding: var(--default-spacing);
+        color: var(--primary-color);
+        background-color: var(--card-color);
+        border-radius: var(--default-border-radius);
+        border: var(--default-border-size) solid var(--card-border-color);
+        grid-gap: var(--default-spacing);
+
+        .sender {
+            color: var(--secondary-color);
+            background-color: var(--primary-color);
+            padding: var(--default-border-radius);
+            align-self: center;
+            justify-self: center;
+            border-radius: var(--default-border-radius);
+        }
+
+        .date {
+            color: var(--card-border-color);
+            padding: var(--default-border-radius);
+            align-self: center;
+            justify-self: center;
+        }
+
+        .message {
+            color: var(--primary-color);
+        }
+    }
+}
+
+.input-area {
+    height: 3rem;
+    display: inline-flex;
+    flex-direction: row;
+    padding: var(--default-spacing);
+    background-color: var(--card-color);
+    gap: var(--default-spacing);
+
+    position: sticky;
+    bottom: 0;
+}
+
+.registration-screen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.registration-input-area {
+    height: 3rem;
+    width: 70%;
+    display: inline-flex;
+    flex-direction: row;
+    padding: var(--default-spacing);
+    background-color: var(--card-color);
+    gap: var(--default-spacing);
+    border-radius: var(--default-border-radius);
+
+    position: sticky;
+    bottom: 0;
+}
+
+.input-text {
+    width: 90%;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    border-radius: var(--default-border-radius);
+    padding: var(--default-spacing);
+}
+
+.send-text-btn {
+    width: 10%;
+    min-width: fit-content;
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+    border-radius: var(--default-border-radius);
+    font-size: large;
+}
+
+.hidden {
+    display: none;
+}

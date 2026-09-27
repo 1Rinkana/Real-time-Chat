@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="registration-screen" class="registration-screen">
+  <div class="registration-input-area">
+    <label for="input-username"></label>
+    <input id="input-username"
+           class="input-text"
+           placeholder="Enter username..."/>
+
+    <button id="send-username-btn"
+            class="send-text-btn">
+      Send
+    </button>
+  </div>
+</div>
+
+<div id="messages-screen" class="messages-screen">
+  <div class="sidebar">
+    <div id="users"
+         class="users-list">
+    </div>
+    <div id="public-chat-btn"
+         class="public chat-btn selected">
+      Public chat</div>
+  </div>
+
+  <div class="chat-area">
+    <div id="chat-with"
+         class="chat-name">
+      Public chat</div>
+    <div id="messages"
+         class="messages-area">
+    </div>
+
+    <div class="input-area">
+      <label for="input-msg"></label>
+      <input id="input-msg"
+             class="input-text"
+             placeholder="Type a message"/>
+
+      <button id="send-msg-btn"
+              class="send-text-btn">
+        Send
+      </button>
+    </div>
+  </div>
+</div>
+<script src="user.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.0/sockjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
