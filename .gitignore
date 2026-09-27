@@ -1,0 +1,5 @@
+# Das soll ignoriert werden:
+target/
+.idea/
+node_modules/
+.DS_Store

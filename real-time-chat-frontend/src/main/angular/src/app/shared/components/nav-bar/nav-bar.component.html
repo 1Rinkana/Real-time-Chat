@@ -1,0 +1,18 @@
+<nav class="nav-bar">
+  <div class="nav-links">
+    <a
+      *ngFor="let link of links"
+      class="nav-link"
+      [routerLink]="link.path"
+      routerLinkActive="active"
+    >
+      <span class="icon">{{ link.icon }}</span>
+      <span class="nav-label">{{ link.label }}</span>
+    </a>
+  </div>
+
+  <div class="nav-footer">
+    <span class="username" *ngIf="currentUser() as user">{{ user.username }}</span>
+    <button type="button" class="logout-btn" (click)="logout()">{{ text.LOGOUT }}</button>
+  </div>
+</nav>

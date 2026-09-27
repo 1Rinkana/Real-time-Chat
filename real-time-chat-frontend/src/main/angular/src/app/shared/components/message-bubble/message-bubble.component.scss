@@ -1,0 +1,42 @@
+@use '../../../../resources/styles/colors' as *;
+@use '../../../../resources/styles/variables' as *;
+
+.message-container {
+  display: grid;
+  width: fit-content;
+  max-width: 70%;
+  grid-template-areas:
+    'sender date'
+    'text text';
+  padding: $spacing-xs;
+  color: $color-text-primary;
+  background-color: $color-card;
+  border-radius: $border-radius-sm;
+  border: $border-size solid $color-card-border;
+  gap: $spacing-xs;
+  box-shadow: $shadow-card;
+}
+
+.sender {
+  grid-area: sender;
+  color: $color-secondary;
+  background-color: $color-primary;
+  padding: $spacing-xxs $spacing-xs;
+  align-self: center;
+  justify-self: start;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-sm;
+}
+
+.date {
+  grid-area: date;
+  color: $color-text-muted;
+  align-self: center;
+  justify-self: end;
+  font-size: $font-size-sm;
+}
+
+.message {
+  grid-area: text;
+  color: $color-text-primary;
+}

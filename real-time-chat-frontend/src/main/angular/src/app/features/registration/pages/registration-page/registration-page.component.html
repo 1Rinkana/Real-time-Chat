@@ -1,0 +1,27 @@
+<div class="registration-screen">
+  <h1 class="title">{{ text.TITLE }}</h1>
+
+  <div class="registration-input-area">
+    <label for="input-username" class="visually-hidden">{{ text.USERNAME_PLACEHOLDER }}</label>
+    <input
+      id="input-username"
+      class="input-text"
+      [placeholder]="text.USERNAME_PLACEHOLDER"
+      [ngModel]="username()"
+      (ngModelChange)="username.set($event)"
+      (keyup.enter)="submit()"
+    />
+
+    <button
+      id="send-username-btn"
+      class="send-text-btn"
+      type="button"
+      [disabled]="isSubmitting()"
+      (click)="submit()"
+    >
+      {{ text.SEND_BUTTON }}
+    </button>
+  </div>
+
+  <p class="error" *ngIf="errorMessage() as error">{{ error }}</p>
+</div>

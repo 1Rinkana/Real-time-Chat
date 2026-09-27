@@ -1,0 +1,24 @@
+@use '../../../../resources/styles/colors' as *;
+@use '../../../../resources/styles/variables' as *;
+
+.user-list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .button-slot {
+    flex: 1;
+  }
+
+  .online-dot {
+    position: absolute;
+    left: $spacing-xxs;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: $color-online-indicator;
+    z-index: 1;
+  }
+}

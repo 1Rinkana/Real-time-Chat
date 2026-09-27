@@ -1,0 +1,34 @@
+// Spacing scale
+$spacing-xxs: 0.25rem;
+$spacing-xs: 0.5rem;
+$spacing-sm: 0.75rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+
+// Border
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 1rem;
+$border-size: 0.065rem;
+
+// Layout sizes
+$sidebar-width: 22%;
+$nav-width: 4.5rem;
+$nav-width-expanded: 14rem;
+$input-area-height: 3.5rem;
+$topbar-height: 3.5rem;
+
+// Typography
+$font-size-sm: 0.85rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.15rem;
+$font-size-xl: 1.5rem;
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-normal: 0.25s ease;
+
+// Shadows
+$shadow-card: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.12);

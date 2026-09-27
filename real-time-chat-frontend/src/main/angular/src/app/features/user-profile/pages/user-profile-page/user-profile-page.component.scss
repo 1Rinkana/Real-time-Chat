@@ -1,0 +1,71 @@
+@use '../../../../../resources/styles/colors' as *;
+@use '../../../../../resources/styles/variables' as *;
+
+.page {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: $spacing-xl;
+}
+
+.page-title {
+  color: $color-primary;
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-lg;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  width: min(32rem, 100%);
+  padding: $spacing-lg;
+  background-color: $color-card;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-card;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xxs;
+}
+
+.field-label {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.input-text {
+  color: $color-text-primary;
+  background-color: $color-bg;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xs $spacing-sm;
+}
+
+.textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.save-btn {
+  align-self: flex-start;
+  color: $color-text-on-primary;
+  background-color: $color-primary;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xs $spacing-lg;
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.status {
+  color: $color-success;
+  font-size: $font-size-sm;
+}

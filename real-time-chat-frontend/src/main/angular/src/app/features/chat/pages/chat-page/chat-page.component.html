@@ -1,0 +1,44 @@
+<div class="messages-screen">
+  <div class="sidebar">
+    <div class="users-list">
+      <app-user-list-item
+        *ngFor="let user of onlineUsers()"
+        [user]="user"
+        [selected]="selectedUserId() === user.uuid"
+        [unreadCount]="unreadFor(user.uuid)"
+        (select)="selectUser($event)"
+      ></app-user-list-item>
+    </div>
+
+    <app-chat-button
+      class="public"
+      [label]="text.PUBLIC_CHAT_LABEL"
+      [selected]="selectedUserId() === null"
+      (selectChat)="selectPublicChat()"
+    ></app-chat-button>
+  </div>
+
+  <div class="chat-area">
+    <div class="chat-name">{{ selectedChatLabel() }}</div>
+
+    <div class="messages-area">
+      <app-message-bubble *ngFor="let message of messages()" [message]="message"></app-message-bubble>
+      <p class="empty-state" *ngIf="messages().length === 0">{{ text.NO_MESSAGES }}</p>
+    </div>
+
+    <div class="input-area">
+      <label for="input-msg" class="visually-hidden">{{ text.MESSAGE_PLACEHOLDER }}</label>
+      <input
+        id="input-msg"
+        class="input-text"
+        [placeholder]="text.MESSAGE_PLACEHOLDER"
+        [ngModel]="draftMessage()"
+        (ngModelChange)="draftMessage.set($event)"
+        (keyup.enter)="send()"
+      />
+      <button id="send-msg-btn" class="send-text-btn" type="button" (click)="send()">
+        {{ text.SEND_BUTTON }}
+      </button>
+    </div>
+  </div>
+</div>

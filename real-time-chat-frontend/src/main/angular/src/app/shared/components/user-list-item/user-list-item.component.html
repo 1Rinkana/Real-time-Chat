@@ -1,0 +1,10 @@
+<div class="user-list-item" [attr.id]="user.uuid">
+  <span class="online-dot"></span>
+  <app-chat-button
+    class="button-slot"
+    [label]="user.username"
+    [selected]="selected"
+    [unreadCount]="unreadCount"
+    (selectChat)="onSelect()"
+  ></app-chat-button>
+</div>

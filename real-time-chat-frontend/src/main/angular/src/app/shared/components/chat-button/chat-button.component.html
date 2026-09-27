@@ -1,0 +1,9 @@
+<button
+  type="button"
+  class="chat-btn"
+  [class.selected]="selected"
+  (click)="onClick()"
+>
+  <span class="label">{{ label }}</span>
+  <span class="new-message-counter" *ngIf="unreadCount > 0">{{ unreadCount }}</span>
+</button>

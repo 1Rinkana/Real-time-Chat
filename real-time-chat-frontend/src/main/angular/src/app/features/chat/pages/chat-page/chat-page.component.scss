@@ -1,0 +1,93 @@
+@use '../../../../../resources/styles/colors' as *;
+@use '../../../../../resources/styles/variables' as *;
+
+.messages-screen {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: $sidebar-width;
+  height: 100%;
+  background-color: $color-card;
+  border-right: $border-size solid $color-card-border;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chat-area {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - #{$sidebar-width});
+  height: 100%;
+}
+
+.chat-name {
+  width: 100%;
+  padding: $spacing-sm;
+  font-size: $font-size-lg;
+  text-align: center;
+  background-color: $color-card;
+  border-bottom: $border-size solid $color-card-border;
+}
+
+.messages-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: $spacing-sm;
+  gap: $spacing-xs;
+}
+
+.empty-state {
+  margin: auto;
+  color: $color-text-muted;
+}
+
+.input-area {
+  height: $input-area-height;
+  display: flex;
+  align-items: center;
+  padding: $spacing-xs;
+  background-color: $color-card;
+  gap: $spacing-xs;
+}
+
+.input-text {
+  flex: 1;
+  height: 60%;
+  color: $color-text-primary;
+  background-color: $color-bg;
+  border-radius: $border-radius-sm;
+  padding: 0 $spacing-sm;
+}
+
+.send-text-btn {
+  height: 60%;
+  padding: 0 $spacing-md;
+  color: $color-text-on-primary;
+  background-color: $color-primary;
+  border-radius: $border-radius-sm;
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}

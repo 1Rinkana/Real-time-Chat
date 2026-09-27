@@ -1,0 +1,42 @@
+<div class="page" *ngIf="profile() as profile">
+  <h1 class="page-title">{{ text.TITLE }}</h1>
+
+  <form class="form-card" (submit)="$event.preventDefault(); save()">
+    <label class="field">
+      <span class="field-label">{{ text.USERNAME_LABEL }}</span>
+      <input
+        class="input-text"
+        [ngModel]="profile.username"
+        name="username"
+        (ngModelChange)="updateField('username', $event)"
+      />
+    </label>
+
+    <label class="field">
+      <span class="field-label">{{ text.EMAIL_LABEL }}</span>
+      <input
+        class="input-text"
+        type="email"
+        [ngModel]="profile.email"
+        name="email"
+        (ngModelChange)="updateField('email', $event)"
+      />
+    </label>
+
+    <label class="field">
+      <span class="field-label">{{ text.BIO_LABEL }}</span>
+      <textarea
+        class="input-text textarea"
+        [ngModel]="profile.bio"
+        name="bio"
+        (ngModelChange)="updateField('bio', $event)"
+      ></textarea>
+    </label>
+
+    <button class="save-btn" type="submit" [disabled]="isSaving()">
+      {{ text.SAVE_BUTTON }}
+    </button>
+
+    <p class="status" *ngIf="statusMessage() as status">{{ status }}</p>
+  </form>
+</div>

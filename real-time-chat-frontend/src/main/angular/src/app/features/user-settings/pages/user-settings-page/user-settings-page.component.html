@@ -1,0 +1,43 @@
+<div class="page">
+  <h1 class="page-title">{{ text.TITLE }}</h1>
+
+  <form class="form-card" (submit)="$event.preventDefault(); save()">
+    <label class="field field-row">
+      <span class="field-label">{{ text.NOTIFICATIONS_LABEL }}</span>
+      <input
+        type="checkbox"
+        [ngModel]="settings().notificationsEnabled"
+        name="notificationsEnabled"
+        (ngModelChange)="updateField('notificationsEnabled', $event)"
+      />
+    </label>
+
+    <label class="field field-row">
+      <span class="field-label">{{ text.SOUND_LABEL }}</span>
+      <input
+        type="checkbox"
+        [ngModel]="settings().soundEnabled"
+        name="soundEnabled"
+        (ngModelChange)="updateField('soundEnabled', $event)"
+      />
+    </label>
+
+    <label class="field">
+      <span class="field-label">{{ text.LANGUAGE_LABEL }}</span>
+      <select
+        class="input-text"
+        [ngModel]="settings().language"
+        name="language"
+        (ngModelChange)="updateField('language', $event)"
+      >
+        <option *ngFor="let lang of languages" [value]="lang.value">{{ lang.label }}</option>
+      </select>
+    </label>
+
+    <button class="save-btn" type="submit" [disabled]="isSaving()">
+      {{ text.SAVE_BUTTON }}
+    </button>
+
+    <p class="status" *ngIf="statusMessage() as status">{{ status }}</p>
+  </form>
+</div>

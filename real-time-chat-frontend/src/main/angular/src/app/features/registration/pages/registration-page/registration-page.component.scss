@@ -1,0 +1,65 @@
+@use '../../../../../resources/styles/colors' as *;
+@use '../../../../../resources/styles/variables' as *;
+
+.registration-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: $spacing-lg;
+  background: linear-gradient(135deg, $color-bg, $color-card);
+}
+
+.title {
+  color: $color-primary;
+  font-size: $font-size-xl;
+}
+
+.registration-input-area {
+  display: inline-flex;
+  width: min(28rem, 90%);
+  padding: $spacing-md;
+  background-color: $color-card;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-card;
+  gap: $spacing-xs;
+}
+
+.input-text {
+  flex: 1;
+  color: $color-text-primary;
+  background-color: $color-bg;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xs $spacing-sm;
+}
+
+.send-text-btn {
+  color: $color-text-on-primary;
+  background-color: $color-primary;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xs $spacing-md;
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  color: $color-danger;
+  font-size: $font-size-sm;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
